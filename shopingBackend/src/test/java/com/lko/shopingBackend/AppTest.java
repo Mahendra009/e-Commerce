@@ -1,4 +1,4 @@
-package com.lko;
+package com.lko.shopingBackend;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

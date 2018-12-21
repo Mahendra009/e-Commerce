@@ -1,4 +1,4 @@
-package com.lko;
+package com.lko.shopingBackend;
 
 /**
  * Hello world!
