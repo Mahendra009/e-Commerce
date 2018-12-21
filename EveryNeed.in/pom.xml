@@ -8,6 +8,9 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>EveryNeed.in Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+	<properties>
+		<spring.version>5.1.1.RELEASE</spring.version>
+	</properties>
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/javax/javaee-api -->
 		<dependency>
@@ -17,8 +20,26 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<!-- spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+
 	</dependencies>
 	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<target>1.8</target>
+					<source>1.8</source>
+				</configuration>
+			</plugin>
+		</plugins>
 		<finalName>EveryNeed.in</finalName>
 	</build>
 </project>

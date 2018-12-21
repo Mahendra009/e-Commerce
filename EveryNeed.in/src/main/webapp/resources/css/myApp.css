@@ -1,0 +1,18 @@
+@charset "ISO-8859-1";
+
+.navbar-brand
+{
+	font-size: 30px;
+}
+.navbar-nav
+{
+	font-size: 20px;
+}
+#menuNavbar
+{
+	margin-top: 55px;
+}
+.dropdown:hover>.dropdown-menu
+{
+	display: block;
+}
