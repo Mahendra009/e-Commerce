@@ -9,10 +9,14 @@
  <link rel="stylesheet" href="resources/css/bootstrap.css">
  <link rel="stylesheet" href="resources/css/all.css">
  <link rel="stylesheet" href="resources/css/myApp.css">
+  
 </head>
 <body>
 	<%@ include file="shared/Header.jsp" %>
 	<%@ include file="Menu.jsp"%>
+	<%@ include file="Carousal.jsp" %>
+	<%@ include file= "multiCarousals/Dealsoftehday.jsp"%>
+	<%@ include file= "multiCarousals/Trending.jsp"%>
 		
 		
 	<%@ include file="shared/Footer.jsp" %>	
