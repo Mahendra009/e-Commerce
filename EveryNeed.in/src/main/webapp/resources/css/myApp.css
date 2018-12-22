@@ -10,9 +10,10 @@
 }
 #menuNavbar
 {
-	margin-top: 55px;
+	margin-top: 70px;
 }
 .dropdown:hover>.dropdown-menu
 {
 	display: block;
 }
+

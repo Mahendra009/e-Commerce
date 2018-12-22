@@ -8,7 +8,7 @@
         <div>
 				<form action="">
 					<div class="input-group">
-						<input type="text" class="form-control" size="70px"
+						<input type="text" class="form-control" size="65px"
 							placeholder="Search Your Product Here" name="search">
 						<div class="input-group-btn">
 							<button class="btn btn-default" type="submit" style="background-color:#e91e63;">

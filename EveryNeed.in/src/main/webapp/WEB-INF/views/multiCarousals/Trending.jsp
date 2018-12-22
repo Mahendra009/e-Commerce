@@ -1,6 +1,7 @@
 <div class="container-fluid">
+		<center><h2 class="my-4">Most Trending Deals</h2> </center>
             <div class="row">
-                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="row">
@@ -47,14 +48,15 @@
                             </div>
                         </div>
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <a class="carousel-control-prev" href="#myCarousel" style="background:black;width: 2% !important; height: 20%;"  data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <a class="carousel-control-next" href="#myCarousel" style="background:black;width: 2% !important; height: 20%;" role="button" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
             </div>    
+        </div>
         </div>
