@@ -10,21 +10,21 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.lko.shopingBackend.DAO.CategoryDAO;
-import com.lko.shopingBackend.model.Category;
+import com.lko.shopingBackend.DAO.SupplierDAO;
+import com.lko.shopingBackend.model.Supplier;
 
-@Repository("categoryDAO")
+@Repository("supplierDAO")
 @Transactional
-public class CategoryDAOImpl implements CategoryDAO {
+public class SupplierDAOImpl implements SupplierDAO {
 	
 	@Autowired
 	private SessionFactory sessionFactory;
 
 	@Override
-	public boolean saveCategory(Category category) {
+	public boolean saveSupplier(Supplier supplier) {
 		try
 		{
-			sessionFactory.getCurrentSession().save(category);
+			sessionFactory.getCurrentSession().save(supplier);
 			return true;
 		}
 		catch(Exception e)
@@ -35,10 +35,10 @@ public class CategoryDAOImpl implements CategoryDAO {
 	}
 
 	@Override
-	public boolean updateCategory(Category category) {
+	public boolean updateSupplier(Supplier supplier) {
 		try
 		{
-			sessionFactory.getCurrentSession().update(category);
+			sessionFactory.getCurrentSession().update(supplier);
 			return true;
 		}
 		catch(Exception e)
@@ -49,10 +49,10 @@ public class CategoryDAOImpl implements CategoryDAO {
 	}
 
 	@Override
-	public boolean deleteCategory(Category category) {
+	public boolean deleteSupplier(Supplier supplier) {
 		try
 		{
-			sessionFactory.getCurrentSession().delete(category);
+			sessionFactory.getCurrentSession().delete(supplier);
 			return true;
 		}
 		catch(Exception e)
@@ -63,12 +63,12 @@ public class CategoryDAOImpl implements CategoryDAO {
 	}
 
 	@Override
-	public Category getCategory(int categoryId) {
+	public Supplier getSupplier(int supplierId) {
 		try
 		{
 			Session session = sessionFactory.getCurrentSession();
-			Category category = session.get(Category.class, categoryId);
-			return category;
+			Supplier supplier = session.get(Supplier.class, supplierId);
+			return supplier;
 		}
 		catch(Exception e)
 		{
@@ -78,16 +78,17 @@ public class CategoryDAOImpl implements CategoryDAO {
 	}
 
 	@Override
-	public List<Category> listCategories() {
+	public List<Supplier> listSuppliers() {
 		try
 		{
 			Session session = sessionFactory.getCurrentSession();
-			Query query = session.createQuery("from Category");
-			List<Category> listCategories = query.list();
-			return listCategories;
+			Query query = session.createQuery("from Supplier");
+			List<Supplier> listSuppliers = query.list();
+			return listSuppliers;
 		}
 		catch(Exception e)
 		{
+			e.printStackTrace();
 			return null;
 		}
 	}
