@@ -30,8 +30,8 @@ public class CategoryDAOTest {
 	@Test
 	public void testSaveCategory() {
 		Category category = new Category();
-		category.setCategoryName("Mobile Phones");
-		category.setDescription("This is mobile phones category");
+		category.setCategoryName("Kids");
+		category.setDescription("This is Kids category");
 		
 		assertTrue("Problem in saving category",categoryDAO.saveCategory(category));
 	}
@@ -61,7 +61,7 @@ public class CategoryDAOTest {
 		assertNotNull("Can not get Category", categoryDAO.getCategory(1102));
 	}
 
-	
+	@Ignore
 	@Test
 	public void testListCategories() {
 		List<Category> listCategories = categoryDAO.listCategories();

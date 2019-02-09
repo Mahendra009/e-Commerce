@@ -66,7 +66,7 @@ public class SupplierDAOTest {
 		assertNotNull("Can not get supplier details", supplierDAO.getSupplier(152));
 	}
 
-	
+	@Ignore
 	@Test
 	public void testListSuppliers() {
 		List<Supplier> listSuppliers = supplierDAO.listSuppliers();
