@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Products")
-@SequenceGenerator(name="productIdSeq", sequenceName= "product_id_seq")
+@SequenceGenerator(name="productIdSeq", sequenceName= "product_id_seq",allocationSize=1)
 public class Product {
 	
 	

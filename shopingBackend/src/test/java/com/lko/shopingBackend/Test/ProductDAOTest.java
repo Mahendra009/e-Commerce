@@ -30,13 +30,13 @@ public class ProductDAOTest {
 	@Test
 	public void testSaveProduct() {
 		Product product = new Product();
-		product.setBrand("Samsung");
-		product.setCategoryId(1);
+		product.setBrand("Apple");
+		product.setCategoryId(2);
 		product.setDescription("This is samsung note 9");
 		product.setProductName("Samsung Note 9");
 		product.setQuantity(5);
 		product.setRating(4);
-		product.setSupplierId(1);
+		product.setSupplierId(2);
 		product.setUnitPrice(700000.00);
 		
 		assertTrue("Can't save product information at this time", productDAO.saveProduct(product));
@@ -67,12 +67,12 @@ public class ProductDAOTest {
 		assertNotNull("Unable to get products", productDAO.getProduct(1));
 	}
 
-	
+	@Ignore
 	@Test
 	public void testListProducts() {
 		List<Product> listProducts = productDAO.listProducts();
 		
-		assertTrue("Unable to get products list", listProducts.size()>0);
+		assertTrue("Unable to get products list", productDAO.listProducts().size()>0);
 		
 		for (Product product : listProducts) 
 		{

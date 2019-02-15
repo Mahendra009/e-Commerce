@@ -30,15 +30,15 @@ public class SupplierDAOTest {
 	@Test
 	public void testSaveSupplier() {
 		Supplier supplier = new Supplier();
-		supplier.setAdharCard("ADHAR1234");
-		supplier.setCategoryId(1102);
-		supplier.setEmailId("neeraj123@gmail.com");
-		supplier.setFirmName("Sharma Traders");
-		supplier.setGSTIN("GSTN12345678");
-		supplier.setPanCard("PAN12345678");
-		supplier.setPhoneNumber("3333333333");
+		supplier.setAdharCard("ADHAR12345");
+		supplier.setCategoryId(2);
+		supplier.setEmailId("amar123@gmail.com");
+		supplier.setFirmName("Harpal Traders");
+		supplier.setGSTIN("GSTN123456789");
+		supplier.setPanCard("PAN123456789");
+		supplier.setPhoneNumber("2222222222");
 		supplier.setRatings(4);
-		supplier.setSupplierName("Neeraj Sharma");
+		supplier.setSupplierName("Amarjeet Singh Saini");
 		
 		assertTrue("Problem in saving Supplier", supplierDAO.saveSupplier(supplier));
 	}
@@ -70,7 +70,7 @@ public class SupplierDAOTest {
 	@Test
 	public void testListSuppliers() {
 		List<Supplier> listSuppliers = supplierDAO.listSuppliers();
-		assertTrue("Can not get suppliers list", listSuppliers.size()>0);
+		assertTrue("Can not get suppliers list", supplierDAO.listSuppliers().size()>0);
 		
 		for(Supplier supplier : listSuppliers)
 		{

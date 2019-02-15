@@ -80,7 +80,7 @@ public class UserDAOTest {
 	public void testListUsers() 
 	{
 		List<User> listUsers = userDAO.listUsers();
-		assertNotNull("Unable to get the list of users", listUsers.size()>0);
+		assertNotNull("Unable to get the list of users", userDAO.listUsers().size()>0);
 		
 		for(User user : listUsers)
 		{

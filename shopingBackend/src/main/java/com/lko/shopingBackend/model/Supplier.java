@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Supplier")
-@SequenceGenerator(name="supplierIdSeq", sequenceName= "supplier_id_seq")
+@SequenceGenerator(name="supplierIdSeq", sequenceName= "supplier_id_seq",allocationSize=1)
 public class Supplier {
 	
 	@Id

@@ -99,14 +99,40 @@ public class ProductDAOImpl implements ProductDAO {
 
 	@Override
 	public List<Product> listProductByCategory(int categoryId) {
-		// TODO Auto-generated method stub
-		return null;
+		try 
+		{
+			Session session = sessionFactory.openSession();
+			Query query = session.createQuery("from Product where categoryId=:categoryId");
+			query.setParameter("categoryId", categoryId);
+			List<Product> listProducts = query.list();
+			session.close();
+			return listProducts;
+			
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@Override
 	public List<Product> listProductBySupplier(int supplierId) {
-		// TODO Auto-generated method stub
-		return null;
+		try 
+		{
+			Session session = sessionFactory.openSession();
+			Query query = session.createQuery("from Product where supplierId=:supplierId");
+			query.setParameter("supplierId", supplierId);
+			List<Product> listProducts = query.list();
+			session.close();
+			return listProducts;
+			
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@Override
@@ -123,8 +149,21 @@ public class ProductDAOImpl implements ProductDAO {
 
 	@Override
 	public List<Product> getListByBrand(String brand) {
-		// TODO Auto-generated method stub
-		return null;
+		try 
+		{
+			Session session = sessionFactory.openSession();
+			Query query = session.createQuery("from Product where brand=:brand");
+			query.setParameter("brand", brand);
+			List<Product> listProducts = query.list();
+			session.close();
+			return listProducts;
+			
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 }

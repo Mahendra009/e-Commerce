@@ -30,8 +30,8 @@ public class CategoryDAOTest {
 	@Test
 	public void testSaveCategory() {
 		Category category = new Category();
-		category.setCategoryName("Kids");
-		category.setDescription("This is Kids category");
+		category.setCategoryName("Women");
+		category.setDescription("This is Women category");
 		
 		assertTrue("Problem in saving category",categoryDAO.saveCategory(category));
 	}
@@ -65,7 +65,7 @@ public class CategoryDAOTest {
 	@Test
 	public void testListCategories() {
 		List<Category> listCategories = categoryDAO.listCategories();
-		assertTrue("Problem in listing categories", listCategories.size()>0);
+		assertTrue("Problem in listing categories", categoryDAO.listCategories().size()>0);
 		
 		for(Category category : listCategories)
 		{
