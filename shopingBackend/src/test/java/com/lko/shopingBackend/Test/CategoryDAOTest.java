@@ -29,7 +29,7 @@ class CategoryDAOTest {
 		categoryDAO = (CategoryDAO) context.getBean("categoryDAO");
 	}
 
-	
+	@Disabled
 	@Test
 	void testSaveCategory() {
 		Category category = new Category();
