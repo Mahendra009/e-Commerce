@@ -19,22 +19,22 @@
     <div class="row">
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
-          <div class="card-body bg-primary">
+          <div class="card-body bg-danger">
             <h5 class="card-title text-center">Manage Category</h5>
-            <form action="<c:url value="/updateCategory"/>" method="post" class="container-fluid">
+            <form action="<c:url value="/updateCategory"/>" method="post" class="container-fluid form-horizontal form-group">
            	 	<div class="table-responsive">
 					<table class="table table-hover table-dark" >
 					<tr>
 						<td>Category ID</td>
-						<td><input type="text" name="categoryId" value="${categoryData.categoryId}" readonly></td>
+						<td><input class="form-control" type="text" name="categoryId" value="${categoryData.categoryId}" readonly></td>
 					</tr>
 						<tr>
 							<td>Category Name</td>
-							<td><input type="text" name="categoryName" value="${categoryData.categoryName}"></td>
+							<td><input type="text" class="form-control" name="categoryName" value="${categoryData.categoryName}"></td>
 						</tr>
 						<tr>
 							<td>Category Description</td>
-							<td><textarea rows="4" cols="" name="description" value="${categoryData.description}"></textarea></td>
+							<td><textarea rows="4" cols="" class="form-control" name="description" value="${categoryData.description}"></textarea></td>
 						</tr>
 						<tr>
 							<td colspan="2" style="text-align: center;">
@@ -58,25 +58,26 @@
     <div class="row">
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
-          <div class="card-body bg-primary">
+          <div class="card-body bg-danger">
             <h5 class="card-title text-center">Manage Category</h5>
-            <form action="<c:url value="/saveCategory"/>" method="post" class="container-fluid">
+            <form action="<c:url value="/saveCategory"/>" method="post" class="container-fluid form-horizontal form-group">
            	 	<div class="table-responsive">
-					<table class="table table-hover table-dark" >
+					<table class="table  table-dark" >
 						<tr>
 							<td>Category Name</td>
-							<td><input type="text" name="categoryName"></td>
+							<td><input class="form-control" type="text" name="categoryName"></td>
 						</tr>
+						
 						<tr>
 							<td>Category Description</td>
-							<td><textarea rows="4" cols="" name="description"></textarea></td>
+							<td><textarea class="form-control" rows="4" cols="" name="description"></textarea></td>
 						</tr>
 						<tr>
 							<td colspan="2" style="text-align: center;">
 							<input type="submit" value="Submit" class="btn btn-primary">
 							</td>
 						</tr>
-		</table>
+				</table>
 		</div>
 	</form>
           </div>
