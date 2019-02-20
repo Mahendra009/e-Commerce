@@ -83,7 +83,8 @@ public class UserDAOImpl implements UserDAO {
 		try
 		{
 			Session session = sessionFactory.getCurrentSession();
-			Query query = session.createQuery("from User");
+			@SuppressWarnings("unchecked")
+			Query<User> query = session.createQuery("from User");
 			List<User> listUsers = query.list();
 			return listUsers;
 		}

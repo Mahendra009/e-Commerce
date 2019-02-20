@@ -7,38 +7,78 @@
 <meta charset="ISO-8859-1">
 <title>EveryNeed.in - Category</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="stylesheet" href="resources/css/bootstrap.css">
- <link rel="stylesheet" href="resources/css/all.css">
- <link rel="stylesheet" href="resources/css/myApp.css">
+ <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.css">
+ <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/all.css">
+ <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/myApp.css">
 </head>
 <body>
 
 <%@ include file="shared/Header.jsp" %>
+<c:if test="${flag}">
 <div class="container-fluid" style="margin-top: 50px;">
     <div class="row">
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
-          <div class="card-body">
+          <div class="card-body bg-primary">
             <h5 class="card-title text-center">Manage Category</h5>
-            <form class="form-signin" action="" method="post">
-              
-              <div class="form-label-group">
-               	<label for="inputCategoryId">Category ID</label>
-                <input type="text" id="inputCategoryId" class="form-control" placeholder="Category ID">
-              </div>
+            <form action="<c:url value="/updateCategory"/>" method="post" class="container-fluid">
+           	 	<div class="table-responsive">
+					<table class="table table-hover table-dark" >
+					<tr>
+						<td>Category ID</td>
+						<td><input type="text" name="categoryId" value="${categoryData.categoryId}" readonly></td>
+					</tr>
+						<tr>
+							<td>Category Name</td>
+							<td><input type="text" name="categoryName" value="${categoryData.categoryName}"></td>
+						</tr>
+						<tr>
+							<td>Category Description</td>
+							<td><textarea rows="4" cols="" name="description" value="${categoryData.description}"></textarea></td>
+						</tr>
+						<tr>
+							<td colspan="2" style="text-align: center;">
+							<input type="submit" value="Update" class="btn btn-primary"> 
+							</td>
+						</tr>
+		</table>
+		</div>
+	</form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</c:if>
 
-              <div class="form-label-group">
-              	<label for="inputCategoryName">Category Name</label>
-                <input type="text" id="inputCategoryName" class="form-control" placeholder="Category Name">
-              </div>
-              
-              <div class="form-label-group">
-              	<label for="inputCategoryDescription">Category Description</label>
-                <textarea rows="5" cols="" id="inputCategoryDescription" class="form-control" placeholder="Category Description"></textarea>
-              </div>
-				<hr class="my-4">
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="Submit">Submit</button>
-            </form>
+
+
+<c:if test="${!flag}">
+<div class="container-fluid" style="margin-top: 50px;">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body bg-primary">
+            <h5 class="card-title text-center">Manage Category</h5>
+            <form action="<c:url value="/saveCategory"/>" method="post" class="container-fluid">
+           	 	<div class="table-responsive">
+					<table class="table table-hover table-dark" >
+						<tr>
+							<td>Category Name</td>
+							<td><input type="text" name="categoryName"></td>
+						</tr>
+						<tr>
+							<td>Category Description</td>
+							<td><textarea rows="4" cols="" name="description"></textarea></td>
+						</tr>
+						<tr>
+							<td colspan="2" style="text-align: center;">
+							<input type="submit" value="Submit" class="btn btn-primary">
+							</td>
+						</tr>
+		</table>
+		</div>
+	</form>
           </div>
         </div>
       </div>
@@ -78,11 +118,9 @@
         </div>
       </div>
     </div>
-
-
-
-  	<script src="resources/js/jquery.js"></script>
-	<script src="resources/js/popper.js"></script>
-	<script src="resources/js/bootstrap.js"></script>
+</c:if>
+  	<script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/popper.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/bootstrap.js"></script>
 </body>
 </html>

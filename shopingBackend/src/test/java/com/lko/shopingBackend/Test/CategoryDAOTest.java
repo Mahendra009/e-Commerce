@@ -3,7 +3,6 @@ package com.lko.shopingBackend.Test;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.List;
 
@@ -51,7 +50,7 @@ class CategoryDAOTest {
 	@Disabled
 	@Test
 	void testDeleteCategory() {
-		Category category = categoryDAO.getCategory(4);
+		Category category = categoryDAO.getCategory(5);
 		assertNotNull(categoryDAO.deleteCategory(category), "Unable to delete Category");
 	}
 

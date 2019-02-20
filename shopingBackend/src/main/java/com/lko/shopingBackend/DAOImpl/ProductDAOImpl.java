@@ -84,7 +84,8 @@ public class ProductDAOImpl implements ProductDAO {
 		try 
 		{
 			Session session = sessionFactory.openSession();
-			Query query = session.createQuery("from Product");
+			@SuppressWarnings("unchecked")
+			Query<Product> query = session.createQuery("from Product");
 			List<Product> listProducts = query.list();
 			session.close();
 			return listProducts;
@@ -102,7 +103,8 @@ public class ProductDAOImpl implements ProductDAO {
 		try 
 		{
 			Session session = sessionFactory.openSession();
-			Query query = session.createQuery("from Product where categoryId=:categoryId");
+			@SuppressWarnings("unchecked")
+			Query<Product> query = session.createQuery("from Product where categoryId=:categoryId");
 			query.setParameter("categoryId", categoryId);
 			List<Product> listProducts = query.list();
 			session.close();
@@ -121,7 +123,8 @@ public class ProductDAOImpl implements ProductDAO {
 		try 
 		{
 			Session session = sessionFactory.openSession();
-			Query query = session.createQuery("from Product where supplierId=:supplierId");
+			@SuppressWarnings("unchecked")
+			Query<Product> query = session.createQuery("from Product where supplierId=:supplierId");
 			query.setParameter("supplierId", supplierId);
 			List<Product> listProducts = query.list();
 			session.close();
@@ -147,12 +150,13 @@ public class ProductDAOImpl implements ProductDAO {
 		return null;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Product> getListByBrand(String brand) {
 		try 
 		{
 			Session session = sessionFactory.openSession();
-			Query query = session.createQuery("from Product where brand=:brand");
+			Query<Product> query = session.createQuery("from Product where brand=:brand");
 			query.setParameter("brand", brand);
 			List<Product> listProducts = query.list();
 			session.close();

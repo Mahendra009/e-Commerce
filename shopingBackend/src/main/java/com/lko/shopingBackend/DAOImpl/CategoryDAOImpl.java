@@ -82,7 +82,8 @@ public class CategoryDAOImpl implements CategoryDAO {
 		try
 		{
 			Session session = sessionFactory.getCurrentSession();
-			Query query = session.createQuery("from Category");
+			@SuppressWarnings("unchecked")
+			Query<Category> query = session.createQuery("from Category");
 			List<Category> listCategories = query.list();
 			return listCategories;
 		}

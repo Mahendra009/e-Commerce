@@ -82,7 +82,8 @@ public class SupplierDAOImpl implements SupplierDAO {
 		try
 		{
 			Session session = sessionFactory.getCurrentSession();
-			Query query = session.createQuery("from Supplier");
+			@SuppressWarnings("unchecked")
+			Query<Supplier> query = session.createQuery("from Supplier");
 			List<Supplier> listSuppliers = query.list();
 			return listSuppliers;
 		}

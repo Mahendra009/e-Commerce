@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="menuNavbar">
       <div class="container-fluid">
           <ul class="navbar-nav">
@@ -6,10 +8,9 @@
           Shop Here
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+        	<c:forEach items="${listCategories}" var="category">
+          		<a class="dropdown-item" href="#">${category.categoryName}</a>
+         	</c:forEach>
         </div>
       </li>
             
