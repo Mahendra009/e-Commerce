@@ -16,7 +16,7 @@ import com.lko.shopingBackend.model.Category;
 
 @Controller
 public class CategoryController {
-
+	
 	@Autowired
 	private CategoryDAO categoryDAO;
 	boolean flag = false;
@@ -29,7 +29,7 @@ public class CategoryController {
 		List<Category> listCategories = categoryDAO.listCategories();
 		mv.addAttribute("categoryList", listCategories);
 		mv.addAttribute("flag", flag);
-		return "Category";
+		return "ManageCategory";
 	}
 	
 	@PostMapping(value = "/saveCategory")
@@ -45,7 +45,7 @@ public class CategoryController {
 		List<Category> listCategories = categoryDAO.listCategories();
 		mv.addAttribute("categoryList", listCategories);
 		mv.addAttribute("flag", flag);
-		return "Category";
+		return "redirect:/category";
 	}
 	
 	@GetMapping(value = "/deleteCategory/{categoryId}")// The form method is POST and the action URL is /deleteCategory, so I would have thought it will work. 
@@ -59,7 +59,7 @@ public class CategoryController {
 		List<Category> listCategories = categoryDAO.listCategories();
 		mv.addAttribute("categoryList", listCategories);
 		mv.addAttribute("flag", flag);
-		return "Category";
+		return "redirect:/category";
 	}
 	
 	@GetMapping(value = "/editCategory/{categoryId}")
@@ -70,7 +70,7 @@ public class CategoryController {
 		Category category = categoryDAO.getCategory(categoryId);
 		mv.addAttribute("categoryData", category);
 		mv.addAttribute("flag", flag);
-		return "Category";
+		return "ManageCategory";
 	}
 	
 	@PostMapping(value = "/updateCategory") // put mapping will not support so using post mapping.
@@ -87,5 +87,5 @@ public class CategoryController {
 		mv.addAttribute("flag", flag);
 		return "redirect:/category";
 	}
-	
+
 }

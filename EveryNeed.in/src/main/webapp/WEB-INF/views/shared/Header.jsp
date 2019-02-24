@@ -1,4 +1,4 @@
- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="${pageContext.request.contextPath}/home"><i class="fab fa-etsy"></i>veryNeed.in <i class="fas fa-shopping-bag"></i></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,11 +8,11 @@
         <div>
 				<form action="">
 					<div class="input-group">
-						<input type="text" class="form-control" size="65px"
+						<input type="text" class="form-control" size="70px"
 							placeholder="Search Your Product Here" name="search">
 						<div class="input-group-btn">
 							<button class="btn btn-default" type="submit" style="background-color:#e91e63;">
-								<i class="fas fa-search" style="font-size:24px;"></i>
+								<i class="fas fa-search" style="font-size:22px;"></i>
 							</button>
 						</div>
 					</div>

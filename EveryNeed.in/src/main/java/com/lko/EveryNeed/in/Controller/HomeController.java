@@ -1,4 +1,4 @@
-package com.lko.EveryNeed.in.controller;
+package com.lko.EveryNeed.in.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,7 +9,7 @@ public class HomeController {
 	@RequestMapping(value = {"/","/home","/index"})
 	public String showHome()
 	{
-		return "Index";
+		return "Home";
 	}
 
 }

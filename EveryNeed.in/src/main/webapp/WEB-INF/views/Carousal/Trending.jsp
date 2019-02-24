@@ -1,4 +1,4 @@
-<div class=" container-fluid">
+<div class=" container-fluid my-4">
 <h2 class="my-4">Most Trending</h2>
 <div id="ThumbnailCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
   <div class="carousel-inner">

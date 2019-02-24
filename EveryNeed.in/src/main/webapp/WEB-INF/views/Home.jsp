@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="ISO-8859-1">
 <title>EveryNeed.in - Home</title>
@@ -10,18 +10,16 @@
  <link rel="stylesheet" href="resources/css/bootstrap.css">
  <link rel="stylesheet" href="resources/css/all.css">
  <link rel="stylesheet" href="resources/css/myApp.css">
-  
 </head>
 <body>
-	<%@ include file="shared/Header.jsp" %>
-	
-	<%@ include file="Menu.jsp"%>
-	<%@ include file="Carousal.jsp" %>
-	<%@ include file= "multiCarousals/Dealsoftehday.jsp"%>
-	<%@ include file= "multiCarousals/Trending.jsp"%>
-		
-		
-	<%@ include file="shared/Footer.jsp" %>	
+		<%@ include file="shared/Header.jsp" %>
+		<%@ include file="Menu.jsp" %>
+		<%@ include file="Carousal/Carousal.jsp"%>
+		<%@ include file="Carousal/Dealsoftehday.jsp"%>
+		<%@ include file="Carousal/Trending.jsp"%>
+		<%@ include file="shared/Footer.jsp" %>
+
+
 	<script src="resources/js/jquery.js"></script>
 	<script src="resources/js/popper.js"></script>
 	<script src="resources/js/bootstrap.js"></script>

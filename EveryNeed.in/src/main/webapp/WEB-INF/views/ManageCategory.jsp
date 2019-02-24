@@ -1,18 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>EveryNeed.in - Category</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.css">
  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/all.css">
  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/myApp.css">
 </head>
 <body>
-
 <%@ include file="shared/Header.jsp" %>
 <c:if test="${flag}">
 <div class="container-fluid" style="margin-top: 50px;">
@@ -88,7 +87,7 @@
   
   <div class="container-fluid">
     <div class="row">
-      <div class="col-12 mx-auto">
+    <div class="col-12 mx-auto">
           <div class="table-responsive">
             <table class="table table-bordered table-hover table-condensed table-dark">
             	<thead>
@@ -118,9 +117,11 @@
           </div>
         </div>
       </div>
-    </div>
+      </div>
 </c:if>
-  	<script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
+
+
+	<script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/popper.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/bootstrap.js"></script>
 </body>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,8 +12,9 @@
  <link rel="stylesheet" href="resources/css/myApp.css">
 </head>
 <body>
-<%@ include file="shared/Header.jsp" %>
-<div class="container" style="margin-top: 50px;">
+	<%@ include file="shared/Header.jsp" %>
+	
+	<div class="container" style="margin-top: 50px;">
     <div class="row">
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
@@ -35,18 +37,20 @@
                 <label class="custom-control-label" for="customCheck1">Remember password</label>
               </div>
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
-              <!-- <hr class="my-4"> -->
+              <hr class="my-4">
             </form>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
-  
- <%@ include file="shared/Footer.jsp" %>	 
+  	<div class="footer">
+  		<%@ include file="shared/Footer.jsp" %>
+ 	</div>
   	<script src="resources/js/jquery.js"></script>
 	<script src="resources/js/popper.js"></script>
 	<script src="resources/js/bootstrap.js"></script>
+	
+	
 </body>
 </html>

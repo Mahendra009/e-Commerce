@@ -9,7 +9,7 @@ public class SupplierController {
 	@RequestMapping(value = "/supplier")
 	public String showSupplier()
 	{
-		return "Supplier";
+		return "ManageSupplier";
 	}
 
 }
