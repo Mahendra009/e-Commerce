@@ -46,7 +46,7 @@
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="${pageContext.request.contextPath}/category"><i class="fas fa-object-group"></i> Manage Category</a>
           <a class="dropdown-item" href="${pageContext.request.contextPath}/supplier"><i class="fas fa-building"></i> Manage Suppliers</a>
-          <a class="dropdown-item" href="${pageContext.request.contextPath}/products"><i class="fab fa-product-hunt"></i> Manage Products</a>
+          <a class="dropdown-item" href="${pageContext.request.contextPath}/product"><i class="fab fa-product-hunt"></i> Manage Products</a>
           <a class="dropdown-item" href="${pageContext.request.contextPath}/displayProduct"><i class="fas fa-tv"></i> Display Products</a>
            <a class="dropdown-item" href="${pageContext.request.contextPath}/perform_logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </div>
