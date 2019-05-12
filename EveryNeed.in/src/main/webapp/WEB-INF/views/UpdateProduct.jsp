@@ -8,21 +8,23 @@
 <meta charset="ISO-8859-1">
 <title>EveryNeed.in - Product</title>
  <meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="stylesheet" href="resources/css/bootstrap.css">
- <link rel="stylesheet" href="resources/css/all.css">
- <link rel="stylesheet" href="resources/css/myApp.css">
+ <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.css">
+ <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/all.css">
+ <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/myApp.css">
 </head>
 <body>
+
 <%@ include file="shared/Header.jsp" %>
 	<div class="container" style="margin-top: 50px;">
 	<div class="row">
       <div class="col-sm-9 col-md-9 col-lg-6 mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body bg-danger">
-            <h5 class="card-title text-center">Manage Products</h5>
-			<form:form action="${pageContext.request.contextPath}/saveProducts" modelAttribute="product" method="post" class="container-fluid form-horizontal form-group">
+            <h5 class="card-title text-center">Update Products</h5>
+			<form:form action="${pageContext.request.contextPath}/updateProduct" modelAttribute="product" method="post" class="container-fluid form-horizontal form-group">
 				<div class="table-responsive">
 					<table class="table table-hover table-dark">
+						<form:hidden path="productId" />
 						<tr>
 							<td>Product Name</td>
 							<td><form:input cssClass="form-control" path="productName"/></td>
@@ -66,7 +68,7 @@
 						</tr>
 						<tr>
 							<td colspan="2" style="text-align: center;">
-							<input type="submit" value="Save" class="btn btn-primary">
+							<input type="submit" value="Update" class="btn btn-primary">
 							</td>
 						</tr>
 						
@@ -78,59 +80,13 @@
 		</div>
 		</div>
 	</div>
-	
-	<div class="container-fluid">
-    <div class="row">
-    <div class="col-12 mx-auto">
-          <div class="table-responsive">
-            <table class="table table-bordered table-hover table-condensed table-dark">
-            	<thead>
-            		<tr>
-            			<th>Product Code</th>
-            			<th>Product ID</th>
-            			<th>Product Name</th>
-            			<th>Brand</th>
-            			<th>Product Quantity</th>
-            			<th>Price</th>
-            			<th>Rating</th>
-            			<th>Category</th>
-            			<th>Supplier</th>
-            			<th>Description</th>
-            			<th>Action</th>
-            		</tr>
-            	</thead>
-            	<tbody>
-            		<c:forEach items="${productList}" var="product">
-            		<tr>
-            			<td>${product.productCode}</td>
-						<td>${product.productId}</td>
-						<td>${product.productName}</td>
-						<td>${product.brand}</td>
-						<td>${product.quantity}</td>
-						<td>${product.unitPrice}</td>
-						<td>${product.rating}</td>
-						<td>${product.categoryId}</td>
-						<td>${product.supplierId}</td>
-						<td>${product.description}</td>
-						
-			<td>
-				<a href="<c:url value='/deleteProduct/${product.productId}'/>"><i class="fas fa-trash-alt"></i></a>
-				<a href="<c:url value='/editProduct/${product.productId}'/>"><i class="fas fa-pen-square"></i></a>
-			</td>
-            		</tr>
-            		</c:forEach>
-            	</tbody>
-            		
-            </table>
-          </div>
-        </div>
-      </div>
-      </div>
-	
 
 
-	<script src="resources/js/jquery.js"></script>
-	<script src="resources/js/popper.js"></script>
-	<script src="resources/js/bootstrap.js"></script>
+
+
+
+	<script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/popper.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/bootstrap.js"></script>
 </body>
 </html>

@@ -45,11 +45,11 @@ class ProductDAOTest {
 		assertNotNull(productDAO.saveProduct(product), "Can not save product details now");
 	}
 
-	@Disabled
+	
 	@Test
 	void testUpdateProduct() {
-		Product product = productDAO.getProduct(1);
-		product.setBrand("Samsung");
+		Product product = productDAO.getProduct(27);
+		product.setDescription("This is complete tooth care tooth paste");
 		
 		assertNotNull(productDAO.updateProduct(product),"Can not update product details");
 	}
