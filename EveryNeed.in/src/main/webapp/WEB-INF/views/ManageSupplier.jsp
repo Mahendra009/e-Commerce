@@ -16,72 +16,62 @@
 <%@ include file="shared/Header.jsp" %>
 	<div class="container" style="margin-top: 50px;">
 		<div class="row">
-      <div class="col-sm-9 col-md-9 col-lg-6 mx-auto">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
-          <div class="card-body bg-danger">
+          <div class="card-body">
             <h5 class="card-title text-center">Manage Suppliers</h5>
 			<form:form action="saveSupplier" modelAttribute="supplier" method="post" class="container-fluid form-horizontal form-group">
-				<div class="table-responsive">
-					<table class="table table-hover table-dark">
-						<tr>
-							<td>Supplier Name</td>
-							<td><form:input cssClass="form-control" path="supplierName"/></td>
-						</tr>
-						<tr>
-							<td>Firm Name</td>
-							<td><form:input cssClass="form-control" path="firmName"/></td>
-						</tr>
-						<tr>
-							<td>GSTN</td>
-							<td><form:input cssClass="form-control" path="GSTIN"/></td>
-						</tr>
-						<tr>
-							<td>Pan Card</td>
-							<td><form:input cssClass="form-control" path="panCard"/></td>
-						</tr>
-						<tr>
-							<td>Adhar Number</td>
-							<td><form:input cssClass="form-control" path="adharCard"/></td>
-						</tr>
-						<tr>
-							<td>Phone Number</td>
-							<td><form:input cssClass="form-control" path="phoneNumber"/></td>
-						</tr>
-						<tr>
-							<td>Email ID</td>
-							<td><form:input cssClass="form-control" path="emailId"/></td>
-						</tr>
-						<tr>
-							<td>Rating</td>
-							<td><form:input cssClass="form-control" path="ratings"/></td>
-						</tr>
-				<tr>
-					<td>Category</td>
-				<td>
-					<form:select cssClass="form-control" path="categoryId">
+			<div class="form-label-group">
+            		<form:label path="">Supplier Name</form:label>
+               		<form:input path="supplierName" cssClass="form-control"/>
+            </div>
+            <div class="form-label-group">
+            		<form:label path="">Firm Name</form:label>
+               		<form:input path="firmName" cssClass="form-control"/>
+            </div>
+            <div class="form-label-group">
+            		<form:label path="">GSTN Number</form:label>
+               		<form:input path="GSTIN" cssClass="form-control"/>
+            </div>
+            <div class="form-label-group">
+            		<form:label path="">PAN Card Number</form:label>
+               		<form:input path="panCard" cssClass="form-control"/>
+            </div>
+            <div class="form-label-group">
+            		<form:label path="">Adhar Card Number</form:label>
+               		<form:input path="adharCard" cssClass="form-control"/>
+            </div>
+            <div class="form-label-group">
+            		<form:label path="">Phone Number</form:label>
+               		<form:input path="phoneNumber" cssClass="form-control"/>
+            </div>
+            <div class="form-label-group">
+            		<form:label path="">Email ID</form:label>
+               		<form:input path="emailId" cssClass="form-control"/>
+            </div>
+            <div class="form-label-group">
+            		<form:label path="">Ratings</form:label>
+               		<form:input path="ratings" cssClass="form-control"/>
+            </div>
+            <div class="form-label-group">
+            		<form:label path="">Category</form:label>
+               		<form:select cssClass="form-control" path="categoryId">
 					<form:option cssClass="form-control" value="0" label="--Select List--"/>
 					<form:options cssClass="form-control" items="${categoryList}"/>
 					</form:select>
-				</td>
-			</tr>
-						<tr>
-							<td colspan="2" style="text-align: center;">
-							<input type="submit" value="Submit" class="btn btn-primary">
-							</td>
-						</tr>
-						
-					</table>
-				</div>
+            </div>
+            <hr class="my-4">
+            <button class="btn btn-md btn-primary btn-block text-uppercase" type="submit">Save</button>
+            
+            
 			</form:form>
 		</div>
 		</div>
 		</div>
 		</div>
 	</div>
-<div class="container-fluid">
-    <div class="row">
-    <div class="col-12 mx-auto">
-          <div class="table-responsive">
+
+          <div class="table-responsive-xl">
             <table class="table table-bordered table-hover table-condensed table-dark">
             	<thead>
             		<tr>
@@ -123,9 +113,7 @@
             		
             </table>
           </div>
-        </div>
-      </div>
-      </div>
+        
 
 
 	<script src="resources/js/jquery.js"></script>

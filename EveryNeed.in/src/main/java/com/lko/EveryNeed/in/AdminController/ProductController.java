@@ -84,7 +84,7 @@ public class ProductController {
 		return "UpdateProduct";
 	}
 	
-	@PostMapping(value = "/updateProduct")
+	@PostMapping(value = "/updateProducts")
 	public String updateProducts(@ModelAttribute("product")Product product,Model mv)
 	{
 		

@@ -19,8 +19,9 @@
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
-            <h5 class="card-title text-center">Manage Category</h5>
-            <form:form action="saveCategory" modelAttribute="category" method="post" class="form-signin">
+            <h5 class="card-title text-center">Update Category</h5>
+            <form:form action="${pageContext.request.contextPath}/updateCategory" modelAttribute="category" method="post" class="form-signin">
+            	<form:hidden path="categoryId"/>
             <div class="form-label-group">
             		<form:label path="">Category Name</form:label>
                		<form:input path="categoryName" cssClass="form-control"/>
@@ -38,38 +39,8 @@
       </div>
     </div>
   </div>
-
-
-          <div class="table-responsive-xl">
-            <table class="table table-bordered table-hover table-condensed table-dark">
-            	<thead style="text-align: center;">
-            		<tr>
-            			<th>Category ID</th>
-            			<th>Category Name</th>
-            			<th>Category Description</th>
-            			<th>Action</th>
-            		</tr>
-            	</thead>
-            	<tbody>
-            		<c:forEach items="${categoryList}" var="category">
-            		<tr>
-            			<td>${category.categoryId}</td>
-						<td>${category.categoryName}</td>
-						<td>${category.description}</td>
-						
-			<td>
-				<a href="<c:url value='/deleteCategory/${category.categoryId}'/>"><i class="fas fa-trash-alt"></i></a>
-				<a href="<c:url value='/editCategory/${category.categoryId}'/>"><i class="fas fa-pen-square"></i></a>
-			</td>
-            		</tr>
-            		</c:forEach>
-            	</tbody>
-            		
-            </table>
-          </div>
-       
-
-	<script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
+  
+  	<script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/popper.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/bootstrap.js"></script>
 </body>

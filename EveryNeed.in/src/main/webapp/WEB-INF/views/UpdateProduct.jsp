@@ -17,63 +17,52 @@
 <%@ include file="shared/Header.jsp" %>
 	<div class="container" style="margin-top: 50px;">
 	<div class="row">
-      <div class="col-sm-9 col-md-9 col-lg-6 mx-auto">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
-          <div class="card-body bg-danger">
-            <h5 class="card-title text-center">Update Products</h5>
-			<form:form action="${pageContext.request.contextPath}/updateProduct" modelAttribute="product" method="post" class="container-fluid form-horizontal form-group">
-				<div class="table-responsive">
-					<table class="table table-hover table-dark">
-						<form:hidden path="productId" />
-						<tr>
-							<td>Product Name</td>
-							<td><form:input cssClass="form-control" path="productName"/></td>
-						</tr>
-						<tr>
-							<td>Brand</td>
-							<td><form:input cssClass="form-control" path="brand"/></td>
-						</tr>
-						<tr>
-							<td>Quantity</td>
-							<td><form:input cssClass="form-control" path="quantity"/></td>
-						</tr>
-						<tr>
-							<td>Price</td>
-							<td><form:input cssClass="form-control" path="unitPrice"/></td>
-						</tr>
-				<tr>
-					<td>Category</td>
-				<td>
-					<form:select cssClass="form-control" path="categoryId">
+          <div class="card-body">
+            <h5 class="card-title text-center">Manage Products</h5>
+			<form:form action="${pageContext.request.contextPath}/updateProducts" modelAttribute="product" method="post" class="container-fluid form-horizontal form-group">
+				<form:hidden path="productId"/>
+				<div class="form-label-group">
+            		<form:label path="">Product Name</form:label>
+               		<form:input path="productName" cssClass="form-control"/>
+            	</div>
+            	<div class="form-label-group">
+            		<form:label path="">Brand</form:label>
+               		<form:input path="brand" cssClass="form-control"/>
+            	</div>
+            	<div class="form-label-group">
+            		<form:label path="">Quantity</form:label>
+               		<form:input path="quantity" cssClass="form-control"/>
+            	</div>
+            	<div class="form-label-group">
+            		<form:label path="">Price</form:label>
+               		<form:input path="unitPrice" cssClass="form-control"/>
+            	</div>
+            	<div class="form-label-group">
+            		<form:label path="">Category</form:label>
+               		<form:select cssClass="form-control" path="categoryId">
 					<form:option cssClass="form-control" value="0" label="--Select List--"/>
 					<form:options cssClass="form-control" items="${categoryList}"/>
 					</form:select>
-				</td>
-			</tr>
-			<tr>
-				<td>Supplier</td>
-				<td><form:select cssClass="form-control" path="supplierId">
+            	</div>
+            	<div class="form-label-group">
+            		<form:label path="">Supplier</form:label>
+               		<form:select cssClass="form-control" path="supplierId">
 					<form:option cssClass="form-control" value="0" label="--Select List--"></form:option>
 					<form:options cssClass="form-control" items="${supplierList}" />
-				</form:select>
-				</td>
-			</tr>
-						<tr>
-							<td>Rating</td>
-							<td><form:input cssClass="form-control" path="rating"/></td>
-						</tr>
-						<tr>
-							<td>Description</td>
-							<td><form:textarea rows="4" cols="" class="form-control" path="description"/></td>
-						</tr>
-						<tr>
-							<td colspan="2" style="text-align: center;">
-							<input type="submit" value="Update" class="btn btn-primary">
-							</td>
-						</tr>
-						
-					</table>
-				</div>
+					</form:select>
+            	</div>
+            	<div class="form-label-group">
+            		<form:label path="">Ratings</form:label>
+               		<form:input path="rating" cssClass="form-control"/>
+            	</div>
+            	<div class="form-label-group">
+            		<form:label path="">Description</form:label>
+               		<form:textarea rows="4" cols="" path="description" cssClass="form-control"/>
+            	</div>
+            	<hr class="my-4">
+            <button class="btn btn-md btn-primary btn-block text-uppercase" type="submit">Update</button>
 			</form:form>
 		</div>
 		</div>
