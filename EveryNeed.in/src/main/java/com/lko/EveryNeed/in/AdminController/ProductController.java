@@ -3,7 +3,7 @@ package com.lko.EveryNeed.in.AdminController;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-import javax.persistence.PostUpdate;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,10 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.lko.EveryNeed.in.util.FileUploadUtility;
 import com.lko.shopingBackend.DAO.CategoryDAO;
 import com.lko.shopingBackend.DAO.ProductDAO;
 import com.lko.shopingBackend.DAO.SupplierDAO;
@@ -46,14 +45,38 @@ public class ProductController {
 		return "ManageProduct";
 	}
 	
+	@GetMapping(value = "/displayProduct")
+	public String showProductPage(Model mv)
+	{
+		mv.addAttribute("productList",productDAO.listProducts());
+		mv.addAttribute("categoryList",this.getCategories());
+		mv.addAttribute("supplierList", this.getSuppliers());
+		return "ProductDisplay";
+	}
+	
+	@RequestMapping(value="/totalProductInfo/{productId}")
+	public String singleProductDisplay(@PathVariable("productId") int productId,Model mv)
+	{
+		Product product = productDAO.getProduct(productId);
+		mv.addAttribute("product",product);
+		mv.addAttribute("categoryName",categoryDAO.getCategory(product.getCategoryId()).getCategoryName());
+		return "SingleProduct";
+	}
+	
 	@PostMapping(value = "/saveProducts")
-	public String saveProducts(@ModelAttribute("product")Product product,Model mv)
+	public String saveProducts(@ModelAttribute("product")Product product,Model mv,HttpServletRequest request)
 	{
 		productDAO.saveProduct(product);
 		mv.addAttribute("categoryList", this.getCategories());
 		
 		Product product1 = new Product();// product1 is used to avoid same product details on jsp page. All the fields should be blank.
 		mv.addAttribute(product1);
+		
+		if(!product.getFile().getOriginalFilename().equals(""))
+		{
+			FileUploadUtility.uploadFile(request,product.getFile(),product.getProductCode());
+		}
+		
 		mv.addAttribute("supplierList", this.getSuppliers());
 		mv.addAttribute("productList",productDAO.listProducts());
 		return "ManageProduct";

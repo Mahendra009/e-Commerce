@@ -20,7 +20,7 @@
         <div class="card card-signin my-5">
           <div class="card-body">
             <h5 class="card-title text-center">Manage Products</h5>
-			<form:form action="${pageContext.request.contextPath}/saveProducts" modelAttribute="product" method="post" class="container-fluid form-horizontal form-group">
+			<form:form action="${pageContext.request.contextPath}/saveProducts" modelAttribute="product" method="post" enctype="multipart/form-data" class="container-fluid form-horizontal form-group">
 				<div class="form-label-group">
             		<form:label path="">Product Name</form:label>
                		<form:input path="productName" cssClass="form-control"/>
@@ -58,6 +58,10 @@
             	<div class="form-label-group">
             		<form:label path="">Description</form:label>
                		<form:textarea rows="4" cols="" path="description" cssClass="form-control"/>
+            	</div>
+            	<div class="form-label-group">
+            		<form:label path="">Select Image</form:label >
+               		<form:input type="file" path="file" />
             	</div>
             	<hr class="my-4">
             <button class="btn btn-md btn-primary btn-block text-uppercase" type="submit">Save</button>

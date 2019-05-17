@@ -9,6 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import org.springframework.web.multipart.MultipartFile;
+
 
 @Entity
 @Table(name = "Products")
@@ -47,6 +51,10 @@ public class Product {
 	
 	@Column(name="Ratings")
 	private int rating;
+	
+	@Transient
+	@Column(name="Image")
+	private MultipartFile file;
 	
 	public int getProductId() {
 		return productId;
@@ -107,6 +115,13 @@ public class Product {
 	}
 	public void setRating(int rating) {
 		this.rating = rating;
+	}
+	
+	public MultipartFile getFile() {
+		return file;
+	}
+	public void setFile(MultipartFile file) {
+		this.file = file;
 	}
 	
 	public Product()

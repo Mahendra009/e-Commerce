@@ -97,7 +97,7 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public User validate(String emailId, String password) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

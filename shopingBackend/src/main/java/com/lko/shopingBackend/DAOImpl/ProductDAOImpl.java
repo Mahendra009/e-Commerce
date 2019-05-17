@@ -140,13 +140,13 @@ public class ProductDAOImpl implements ProductDAO {
 
 	@Override
 	public List<Product> listProductBySearch(String search) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public List<Product> listProductByFilter(int MIN, int MAX) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
