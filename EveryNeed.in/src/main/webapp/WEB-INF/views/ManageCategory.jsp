@@ -24,10 +24,12 @@
             		<div class="form-label-group">
             			<form:label path="">Category Name</form:label>
                			<form:input path="categoryName" cssClass="form-control"/>
+               			<form:errors path="categoryName" cssClass="help-block" element="em"/>
             		</div>
             		<div class="form-label-group">
             			<form:label path="">Category Description</form:label>
                			<form:textarea rows="4" cols="" path="description" cssClass="form-control"/>
+            			<form:errors path="description" cssClass="help-block" element="em"/>
             		</div>
             			<hr class="my-4">
             			<button class="btn btn-md btn-primary btn-block text-uppercase" type="submit">Save</button>

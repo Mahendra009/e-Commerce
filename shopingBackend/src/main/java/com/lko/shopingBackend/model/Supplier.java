@@ -8,6 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Table(name="Supplier")
@@ -19,13 +22,28 @@ public class Supplier {
 	private int supplierId;
 	private int categoryId;
 	private String supplierCode;
+	@NotBlank(message = "Please Enter The Supplier Name!")
 	private String supplierName;
+	
+	@NotBlank(message = "Please Enter The Firm Name!")
 	private String firmName;
+	
+	@NotBlank(message = "Please Enter Your GSTN Number!")
 	private String GSTIN;
+	
+	@NotBlank(message = "Please Enter Your Pan Card Number!")
 	private String panCard;
+	
+	@NotBlank(message = "Please Enter Adhar Card Number!")
 	private String adharCard;
+	
+	@NotBlank(message = "Please Enter Your Phone Number!")
 	private String phoneNumber;
+	
+	@NotBlank(message = "Please Enter Your Email ID!")
 	private String emailId;
+	
+	@Min(value = 1, message = "Price can not be less than 1!")
 	private int ratings;
 	
 	public int getSupplierId() {

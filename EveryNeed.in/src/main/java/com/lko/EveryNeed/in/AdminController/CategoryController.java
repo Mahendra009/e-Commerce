@@ -1,8 +1,11 @@
 package com.lko.EveryNeed.in.AdminController;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,8 +31,15 @@ public class CategoryController {
 	}
 	
 	@PostMapping(value = "/saveCategory")
-	public String saveCategory(@ModelAttribute("category")Category category,Model mv)
+	public String saveCategory(@Valid @ModelAttribute("category")Category category,BindingResult results, Model mv)
 	{
+		//to check if there is any errors
+		if(results.hasErrors())
+		{
+			mv.addAttribute("categoryList", categoryDAO.listCategories());
+			return "ManageCategory";
+		}
+		
 		categoryDAO.saveCategory(category);
 		Category category1 = new Category();
 		mv.addAttribute(category1);

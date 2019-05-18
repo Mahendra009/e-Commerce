@@ -26,18 +26,22 @@
 				<div class="form-label-group">
             		<form:label path="">Product Name</form:label>
                		<form:input path="productName" cssClass="form-control"/>
+               		<form:errors path="productName" cssClass="help-block" element="em"/>
             	</div>
             	<div class="form-label-group">
             		<form:label path="">Brand</form:label>
                		<form:input path="brand" cssClass="form-control"/>
+               		<form:errors path="brand" cssClass="help-block" element="em"/>
             	</div>
             	<div class="form-label-group">
             		<form:label path="">Quantity</form:label>
                		<form:input path="quantity" cssClass="form-control"/>
+               		<form:errors path="quantity" cssClass="help-block" element="em"/>
             	</div>
             	<div class="form-label-group">
             		<form:label path="">Price</form:label>
                		<form:input path="unitPrice" cssClass="form-control"/>
+               		<form:errors path="unitPrice" cssClass="help-block" element="em"/>
             	</div>
             	<div class="form-label-group">
             		<form:label path="">Category</form:label>
@@ -56,10 +60,12 @@
             	<div class="form-label-group">
             		<form:label path="">Ratings</form:label>
                		<form:input path="rating" cssClass="form-control"/>
+               		<form:errors path="rating" cssClass="help-block" element="em"/>
             	</div>
             	<div class="form-label-group">
             		<form:label path="">Description</form:label>
                		<form:textarea rows="4" cols="" path="description" cssClass="form-control"/>
+               		<form:errors path="description" cssClass="help-block" element="em"/>
             	</div>
             	<div class="form-label-group">
             		<form:label path="">Select Image</form:label >

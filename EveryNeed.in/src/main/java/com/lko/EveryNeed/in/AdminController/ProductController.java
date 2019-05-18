@@ -4,10 +4,12 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -64,8 +66,17 @@ public class ProductController {
 	}
 	
 	@PostMapping(value = "/saveProducts")
-	public String saveProducts(@ModelAttribute("product")Product product,Model mv,HttpServletRequest request)
+	public String saveProducts(@Valid @ModelAttribute("product")Product product,BindingResult results, Model mv,HttpServletRequest request)
 	{
+		// to check if there is any errors
+		if(results.hasErrors())
+		{
+			mv.addAttribute("categoryList", this.getCategories());
+			mv.addAttribute("supplierList", this.getSuppliers());
+			mv.addAttribute("productList",productDAO.listProducts());
+			return "ManageProduct";
+		}
+		
 		productDAO.saveProduct(product);
 		mv.addAttribute("categoryList", this.getCategories());
 		

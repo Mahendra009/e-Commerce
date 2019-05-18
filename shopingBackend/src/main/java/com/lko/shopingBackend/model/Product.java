@@ -10,7 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.Min;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.web.multipart.MultipartFile;
 
 
@@ -34,22 +36,29 @@ public class Product {
 	@Column(name="Product_Code")
 	private String productCode;
 	
+	
 	@Column(name="Product_Name")
+	@NotBlank(message = "Please Enter The Product Name!")
 	private String productName;
 	
 	@Column(name="Brand")
+	@NotBlank(message = "Please Enter The Brand Name!")
 	private String brand;
 	
 	@Column(name="Description")
+	@NotBlank(message = "Please Enter The Product description!")
 	private String description;
 	
 	@Column(name="Quantity")
+	@Min(value = 1, message = "Price can not be less than 1!")
 	private int quantity;
 	
 	@Column(name="Price")
+	@Min(value = 1, message = "Price can not be less than 1!")
 	private double unitPrice;
 	
 	@Column(name="Ratings")
+	@Min(value = 1, message = "Price can not be less than 1!")
 	private int rating;
 	
 	@Transient

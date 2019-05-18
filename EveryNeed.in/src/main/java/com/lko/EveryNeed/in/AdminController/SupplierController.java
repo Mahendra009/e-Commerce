@@ -3,9 +3,12 @@ package com.lko.EveryNeed.in.AdminController;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -37,8 +40,15 @@ public class SupplierController {
 	}
 	
 	@PostMapping(value = "/saveSupplier")
-	public String saveSupplier(@ModelAttribute("supplier")Supplier supplier,Model mv)
+	public String saveSupplier(@Valid @ModelAttribute("supplier")Supplier supplier,BindingResult results,Model mv)
 	{
+		if(results.hasErrors())
+		{
+			mv.addAttribute("categoryList", this.getCategories());
+			mv.addAttribute("supplierList",supplierDAO.listSuppliers());
+			return "ManageSupplier";
+		}
+		
 		supplierDAO.saveSupplier(supplier);
 		mv.addAttribute("categoryList", this.getCategories());
 		

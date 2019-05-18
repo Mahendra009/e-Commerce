@@ -24,34 +24,42 @@
 			<div class="form-label-group">
             		<form:label path="">Supplier Name</form:label>
                		<form:input path="supplierName" cssClass="form-control"/>
+               		<form:errors path="supplierName" cssClass="help-block" element="em"/>
             </div>
             <div class="form-label-group">
             		<form:label path="">Firm Name</form:label>
                		<form:input path="firmName" cssClass="form-control"/>
+               		<form:errors path="firmName" cssClass="help-block" element="em"/>
             </div>
             <div class="form-label-group">
             		<form:label path="">GSTN Number</form:label>
                		<form:input path="GSTIN" cssClass="form-control"/>
+               		<form:errors path="firmName" cssClass="help-block" element="em"/>
             </div>
             <div class="form-label-group">
             		<form:label path="">PAN Card Number</form:label>
                		<form:input path="panCard" cssClass="form-control"/>
+               		<form:errors path="panCard" cssClass="help-block" element="em"/>
             </div>
             <div class="form-label-group">
             		<form:label path="">Adhar Card Number</form:label>
                		<form:input path="adharCard" cssClass="form-control"/>
+               		<form:errors path="adharCard" cssClass="help-block" element="em"/>
             </div>
             <div class="form-label-group">
             		<form:label path="">Phone Number</form:label>
                		<form:input path="phoneNumber" cssClass="form-control"/>
+               		<form:errors path="phoneNumber" cssClass="help-block" element="em"/>
             </div>
             <div class="form-label-group">
             		<form:label path="">Email ID</form:label>
                		<form:input path="emailId" cssClass="form-control"/>
+               		<form:errors path="emailId" cssClass="help-block" element="em"/>
             </div>
             <div class="form-label-group">
             		<form:label path="">Ratings</form:label>
                		<form:input path="ratings" cssClass="form-control"/>
+               		<form:errors path="ratings" cssClass="help-block" element="em"/>
             </div>
             <div class="form-label-group">
             		<form:label path="">Category</form:label>
