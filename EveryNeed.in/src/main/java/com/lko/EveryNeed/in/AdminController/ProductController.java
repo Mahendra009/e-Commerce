@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.lko.EveryNeed.in.util.FileUploadUtility;
+import com.lko.EveryNeed.in.validator.ProductValidator;
 import com.lko.shopingBackend.DAO.CategoryDAO;
 import com.lko.shopingBackend.DAO.ProductDAO;
 import com.lko.shopingBackend.DAO.SupplierDAO;
@@ -68,6 +69,8 @@ public class ProductController {
 	@PostMapping(value = "/saveProducts")
 	public String saveProducts(@Valid @ModelAttribute("product")Product product,BindingResult results, Model mv,HttpServletRequest request)
 	{
+		new ProductValidator().validate(product, results);
+		
 		// to check if there is any errors
 		if(results.hasErrors())
 		{

@@ -2,9 +2,6 @@ package com.lko.shopingBackend.Test;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.lko.shopingBackend.DAO.ProductDAO;
-import com.lko.shopingBackend.model.Product;
-
 public class oracleConfigurationTest {
 	
 	public static void main(String[] args) {
@@ -12,14 +9,16 @@ public class oracleConfigurationTest {
 		
 		
 		
+		
+		  AnnotationConfigApplicationContext context = new
+		  AnnotationConfigApplicationContext(); context.scan("com.lko.shopingBackend");
+		  context.refresh();
+		 
 		/*
-		 * AnnotationConfigApplicationContext context = new
-		 * AnnotationConfigApplicationContext(); context.scan("com.lko.shopingBackend");
-		 * context.refresh();
-		 * 
 		 * ProductDAO productDAO = (ProductDAO) context.getBean("productDAO"); Product
 		 * product = new Product();
 		 */
+		 
 		 
 		 
 		 

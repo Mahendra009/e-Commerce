@@ -67,7 +67,8 @@
             	</div>
             	<div class="form-label-group">
             		<form:label path="">Select Image</form:label >
-               		<form:input type="file" path="file" />
+               		<form:input type="file" path="file" cssClass="form-control"/>
+               		<form:errors path="file" cssClass="help-block" element="em"/>
             	</div>
             	<hr class="my-4">
             <button class="btn btn-md btn-primary btn-block text-uppercase" type="submit">Save</button>
